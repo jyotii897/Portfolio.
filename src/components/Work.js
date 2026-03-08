@@ -18,7 +18,7 @@ const PROJECTS = [
         detailedDescription:
             'During my learning journey, I wanted to build something that solved a real problem for students preparing for interviews. PrepWise is a mock interview platform using AI. As a fresher, integrating the Vapi SDK with Google Gemini was a great challenge in understanding low-latency WebSockets and handling browser APIs for media devices. I also built out the Firebase backend to track authenticated users and store their session scorecards, giving me solid full-stack experience.',
         tags: ['React', 'Vapi SDK', 'Google Gemini', 'Firebase', 'Web APIs'],
-        href: 'https://projectfoloi.netlify.app/',
+        href: 'https://ai-mock-interview-667r.vercel.app/',
         github: 'https://github.com/jyotii897/ai_mock_interview',
     },
     {
