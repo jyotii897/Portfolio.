@@ -1,0 +1,369 @@
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+/* Project Card */
+.card {
+    position: relative;
+    padding: var(--space-xl);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition), border-color var(--transition),
+        box-shadow var(--transition), transform var(--transition);
+    cursor: default;
+}
+
+.card:hover {
+    background: var(--surface);
+    border-color: var(--border);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px var(--border);
+}
+
+.card:hover .cardAccentLine {
+    width: 100%;
+}
+
+.cardAccentLine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transition: width 0.4s ease;
+}
+
+/* Card content */
+.cardOverline {
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: var(--space-sm);
+}
+
+.cardTitle {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.cardArrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: transform var(--transition);
+    color: var(--accent);
+}
+
+.card:hover .cardArrow {
+    transform: translate(3px, -3px);
+}
+
+.cardDescription {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.cardTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    list-style: none;
+}
+
+.tag {
+    font-size: 0.7rem;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    padding: 3px 10px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+}
+
+.cardLinks {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.cardLink {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: color var(--transition);
+}
+
+.cardLink:hover {
+    color: var(--accent);
+}
+
+.cardLink svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* Empty state */
+.emptyCard {
+    border: 1px dashed var(--border);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl) var(--space-xl);
+    text-align: center;
+}
+
+.emptyCard:hover {
+    border-color: var(--border-light);
+    background: var(--surface);
+    transform: none;
+    box-shadow: none;
+}
+
+.emptyIcon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.5;
+}
+
+.emptyText {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.emptyText strong {
+    color: var(--text-secondary);
+}
+
+/* Archive link */
+.archiveLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+.archiveLink:hover {
+    color: var(--accent);
+}
+
+.archiveLink:hover .archiveArrow {
+    transform: translateX(4px);
+}
+
+.archiveArrow {
+    transition: transform var(--transition);
+}
+
+.readMore {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    font-family: var(--font-heading);
+}
+
+/* Modal Popup Styles */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.closeButton {
+    position: absolute;
+    top: var(--space-xl);
+    right: var(--space-xl);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color var(--transition);
+    z-index: 10;
+}
+
+.closeButton:hover {
+    color: var(--text);
+}
+
+.modalHeader {
+    padding: var(--space-2xl) var(--space-2xl) var(--space-xl);
+    border-bottom: 1px solid var(--border);
+}
+
+.modalOverline {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.modalTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.modalBody {
+    padding: var(--space-2xl);
+}
+
+.modalDescription {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+}
+
+.modalTech h4 {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.modalFooter {
+    padding: var(--space-xl) var(--space-2xl);
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: var(--space-md);
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+}
+
+.smallButtonPrimary,
+.smallButtonSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.smallButtonPrimary {
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent);
+}
+
+.smallButtonPrimary:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+.smallButtonSecondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-light);
+}
+
+.smallButtonSecondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .modalOverlay {
+        padding: var(--space-md);
+    }
+
+    .modalHeader {
+        padding: var(--space-xl) var(--space-xl) var(--space-md);
+    }
+
+    .modalBody {
+        padding: var(--space-xl);
+    }
+
+    .modalFooter {
+        padding: var(--space-xl);
+        flex-direction: column;
+    }
+
+    .smallButtonPrimary,
+    .smallButtonSecondary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,132 @@
+.contact {
+    padding-bottom: var(--space-4xl);
+}
+
+.heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.headingAccent {
+    color: var(--accent);
+}
+
+.body {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2xl);
+    font-family: var(--font-mono);
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+    max-width: 600px;
+}
+
+.inputGroup {
+    width: 100%;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: var(--space-md) var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text);
+    border-radius: 0;
+    /* Square edges as per screenshot */
+    transition: border-color var(--transition);
+    outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--accent);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitBtn {
+    width: 100%;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+    margin-top: var(--space-sm);
+}
+
+.submitBtn:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.successMessage {
+    color: #4ade80;
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+    font-family: var(--font-mono);
+}
+
+.errorMessage {
+    color: #f87171;
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
+    font-family: var(--font-mono);
+}
+
+
+
+/* Footer */
+.footer {
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border);
+}
+
+.footerText {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.footerLink {
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+.footerLink:hover {
+    color: var(--accent);
+}

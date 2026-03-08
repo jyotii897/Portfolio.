@@ -1,0 +1,54 @@
+.toggle {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: var(--surface);
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    flex-shrink: 0;
+}
+
+.toggle:hover {
+    border-color: var(--accent);
+}
+
+.toggleThumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleThumb svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--bg);
+}
+
+.toggle[data-active='true'] .toggleThumb {
+    transform: translateX(24px);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.label {
+    font-size: 0.7rem;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
